@@ -1,5 +1,5 @@
 <template>
-<div class="flex flex-col text-purple-900">
+<div class="flex flex-col text-purple-900 w-[22em] md:w-auto">
     <!-- <h1 class="font-bold text-lg">What we've found correspondig your word</h1> -->
     <div @click="useStore().initiall = true" class="w-10 cursor-pointer hover:bg-gray-100 rounded-full ml-1 mt-1">
     <img src="../assets/exit.png" class="w-[3em]">

@@ -1,16 +1,15 @@
 <template>
 
-    <input-custom/>
-<div class="relative bg-white flex justify-center items-center z-[0] h-[25em] rounded w-[40em]">
+<div class="relative bg-white flex justify-center items-center z-[0] h-[25em] rounded w-[23em] md:w-[40em]">
     <img src="../assets/abstract.png" class="w-full h-[27em h-full absolute object-contai z-[-1] rounded">
     <div class="text-purple-700">
         <div class="flex items-center justify-center pb1 gap-3 mb-3 border--2 w-full z-10">
         <div @click="useStore().initiall = true; useStore().translator = false" :class="useStore().initiall ? 'border-b-[3px] border-purple-700':''" class="cursor-pointer">Dictionary</div>
         <div @click="useStore().translator = true; useStore().initiall=false" :class="useStore().translator ? 'border-b-[3px] border-purple-700':''" class="cursor-pointer">Translator</div>
     </div>
-    <div>
+    <div class="flex flex-col items-center justify-center w[22em] md:w-fit">
         <!--text areas-->
-        <div class="flex overflow-hidden textContainer">
+        <div class="flex overflow-hidden w-[22em] md:w-auto textContainer">
             <textarea v-model="fromText" placeholder="The text you want to translate" cols="30" rows="10" class="border-[2px] rounded" style="border-top-right-radius: 0;border-bottom-right-radius: 0;border-bottom-left-radius: 0;"></textarea>
             <textarea v-model="translated" cols="30" rows="10" class="border-l-[0]  border-[2px] rounded " style="border-top-left-radius: 0;border-bottom-left-radius: 0;border-bottom-right-radius: 0;" readonly>
             
@@ -18,7 +17,7 @@
         </div>
 
         <!--copy and speak options and select inputs-->
-        <div class="py-3 border-t-0 border-2 flex items-center justify-between px-3 bg-gray-100" style="border-bottom-left-radius: 0.25rem;border-bottom-right-radius: 0.25rem;">
+        <div class="py-3 border-t-0 border-2 flex items-center justify-between px-3 bg-gray-100 w-[22em] md:w-[100%]" style="border-bottom-left-radius: 0.25rem;border-bottom-right-radius: 0.25rem;">
         <div >
             <div class="flex gap-3 items-center">
                 <div class="flex items-center gap-3 text-gray-400 border-r pr-3 border-r-gray-800">
