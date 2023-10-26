@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    @apply bg-gray-50
+}
+
+.hiddenn{
+    @apply translate-x-[-100%] md:translate-x-[-200%] blur-[3px] duration-700
+}
+.show{
+    @apply translate-x-0 blur-0 
+}
+
+/*translator component*/
+
+.textContainer textarea{
+    @apply resize-none outline-none px-2 py-1
+}
+
