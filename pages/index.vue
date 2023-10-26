@@ -1,8 +1,8 @@
 <template>
    
-   
-
-
+   <div class="translate-x-[50%] z-20 absolute left-[50%]">
+   <ConfettiExplosion :duration="5000" :particleSize="13" :particleCount="300" v-if="visible" />
+</div>
 <div class="mx-auto w-fit flex items-center justify-center h-screen hiddenn">
     <div v-if="useStore().translator" class="w-fit mx-auto py-20">
     <translator/>
@@ -21,13 +21,34 @@
 <script setup>
 import { useStore } from '~/stores/user'
 import { storeToRefs } from 'pinia';
+import ConfettiExplosion from 'vue-confetti-explosion';
 
 const { data, initiall } = storeToRefs(useStore())
 
 const { fetchData } = apiFetch()
 
+import axios from 'axios'
+const testFetch = async ()=>{
+try{
+    const res = await axios.get('https://readcartapi-server.vercel.app/api/books?limit=500')
+
+    console.log(res.data);
+}catch(e){
+
+}
+}
+
+const visible = ref(false);
+
+  const explode = async () => {
+    visible.value = false;
+    await nextTick();
+    visible.value = true;
+  };
+
 onMounted(()=>{
-    console.log(decodeURIComponent('\u05d0\u05d4\u05dc\u05df'));
+    visible.value = true
+
     const observer = new IntersectionObserver((entries)=>{
         entries.forEach(entry=>{
             if(entry.isIntersecting){
